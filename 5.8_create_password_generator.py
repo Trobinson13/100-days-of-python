@@ -29,19 +29,20 @@ print(f"Request length: {total_pass_length}")
 # Add count(nr_letters) of random letters to newly created non-randomized list
 nl = 0
 while nl < nr_letters:
-  not_randomized.append(random.choices(letters))
+  random_selection = random.choices(letters)
+  not_randomized.append(random_selection[0])
   nl += 1
   
 # Add count(nr_symbols) of random symbols to newly created non-randomized list
 ns = 0
 while ns < nr_symbols:
-  not_randomized.append(random.choices(symbols))
+  not_randomized.append(random.choices(symbols)[0])
   ns += 1
   
 # Add count(nr_numbers) of random numbers to newly created non-randomized list
 nn = 0
 while nn < nr_numbers:
-  not_randomized.append(random.choices(numbers))
+  not_randomized.append(random.choices(numbers)[0])
   nn += 1
 
 
@@ -52,14 +53,11 @@ while (len(not_randomized) != 0):
     randomized_int = random.randint(0, len(not_randomized ) - 1)
     randomized_value = not_randomized[randomized_int]
 
-    completely_randomized.append(randomized_value)
+    completely_randomized.append(randomized_value[0])
     del not_randomized[randomized_int]
 
     print("Completely Randomized: ", completely_randomized, "\n")
 
-finished_pass = ""
-
-for x in completely_randomized:
-    finished_pass = finished_pass + str(x)
+finished_pass = "".join(completely_randomized)
 
 print(finished_pass)
