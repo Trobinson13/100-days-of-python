@@ -42,6 +42,24 @@ while ns < nr_symbols:
 nn = 0
 while nn < nr_numbers:
   not_randomized.append(random.choices(numbers))
-  ns += 1
+  nn += 1
 
-print(not_randomized)
+
+while (len(not_randomized) != 0):
+
+    print("Not randomized: ", not_randomized)
+
+    randomized_int = random.randint(0, len(not_randomized ) - 1)
+    randomized_value = not_randomized[randomized_int]
+
+    completely_randomized.append(randomized_value)
+    del not_randomized[randomized_int]
+
+    print("Completely Randomized: ", completely_randomized, "\n")
+
+finished_pass = ""
+
+for x in completely_randomized:
+    finished_pass = finished_pass + str(x)
+
+print(finished_pass)
