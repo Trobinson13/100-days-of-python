@@ -30,7 +30,7 @@ print(f"Request length: {total_pass_length}")
 nl = 0
 while nl < nr_letters:
   # From random.choices returned list, add the string to not_randomized
-  random_selection = random.choices(letters)
+  random_selection = random.choice(letters)
   not_randomized.append(random_selection[0])
   nl += 1
   
@@ -38,14 +38,14 @@ while nl < nr_letters:
 ns = 0
 while ns < nr_symbols:
   # From random.choices returned list, add the string to not_randomized
-  not_randomized.append(random.choices(symbols)[0])
+  not_randomized.append(random.choice(symbols)[0])
   ns += 1
   
 # Add count(nr_numbers) of random numbers to newly created non-randomized list
 nn = 0
 while nn < nr_numbers:
   # From random.choices returned list, add the string to not_randomized
-  not_randomized.append(random.choices(numbers)[0])
+  not_randomized.append(random.choice(numbers)[0])
   nn += 1
 
 
@@ -53,7 +53,6 @@ while (len(not_randomized) != 0):
     # For testing 
     #print("Not randomized: ", not_randomized)
 
-    
     randomized_int = random.randint(0, len(not_randomized ) - 1)
     randomized_value = not_randomized[randomized_int]
 
