@@ -30,10 +30,11 @@ while continue_game:
   
   print(display)
 
-  continue_game = False
-  for display_letter in display:
-    if display_letter == "_":
-      continue_game = True
-      
-if continue_game == False:
-  print("You've won!")
+#   continue_game = False
+#   for display_letter in display:
+#     if display_letter == "_":
+#       continue_game = True
+
+if "_" not in display:
+    continue_game = False
+    print("You've won!")
